@@ -20,8 +20,8 @@ export const EditTask = () => {
   const onUpdateTask = () => {
     console.log(isDone);
     const data = {
-      title: title,
-      detail: detail,
+      title,
+      detail,
       done: isDone,
     };
 

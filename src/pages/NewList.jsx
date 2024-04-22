@@ -14,7 +14,7 @@ export const NewList = () => {
   const handleTitleChange = (e) => setTitle(e.target.value);
   const onCreateList = () => {
     const data = {
-      title: title,
+      title,
     };
 
     axios

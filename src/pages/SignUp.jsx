@@ -22,9 +22,9 @@ export const SignUp = () => {
   const handlePasswordChange = (e) => setPassword(e.target.value);
   const onSignUp = () => {
     const data = {
-      email: email,
-      name: name,
-      password: password,
+      email,
+      name,
+      password,
     };
 
     axios

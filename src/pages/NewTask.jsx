@@ -19,8 +19,8 @@ export const NewTask = () => {
   const handleSelectList = (id) => setSelectListId(id);
   const onCreateTask = () => {
     const data = {
-      title: title,
-      detail: detail,
+      title,
+      detail,
       done: false,
     };
 

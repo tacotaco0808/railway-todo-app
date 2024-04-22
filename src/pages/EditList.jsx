@@ -15,7 +15,7 @@ export const EditList = () => {
   const handleTitleChange = (e) => setTitle(e.target.value);
   const onUpdateList = () => {
     const data = {
-      title: title,
+      title,
     };
 
     axios
