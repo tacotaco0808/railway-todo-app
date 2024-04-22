@@ -1,5 +1,5 @@
 import React from "react";
-import "./index.css";
+import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { CookiesProvider } from "react-cookie";
@@ -13,7 +13,7 @@ root.render(
     <CookiesProvider>
       <App />
     </CookiesProvider>
-  </Provider>,
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
