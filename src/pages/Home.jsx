@@ -128,7 +128,14 @@ export const Home = () => {
 const Tasks = (props) => {
   const { tasks, selectListId, isDoneDisplay } = props;
   if (tasks === null) return <></>;
-
+  // 時間表示変換
+  function dateCnversion(beforeDate) {
+    // before_date||YYYY-MM-DDTHH:MM:SSZ形式
+    const oldDate = new Date(beforeDate);
+    oldDate.setHours(oldDate.getHours() - 9);
+    const newDate = oldDate.toLocaleString();
+    return newDate;
+  }
   if (isDoneDisplay === "done") {
     return (
       <ul>
@@ -167,6 +174,7 @@ const Tasks = (props) => {
               {task.title}
               <br />
               {task.done ? "完了" : "未完了"}
+              <p>期限:{dateCnversion(task.limit)}</p>
             </Link>
           </li>
         ))}
