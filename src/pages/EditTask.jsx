@@ -70,12 +70,17 @@ export const EditTask = () => {
         setTitle(task.title);
         setDetail(task.detail);
         setIsDone(task.done);
+        setLimit(task.limit);
       })
       .catch((err) => {
         setErrorMessage(`タスク情報の取得に失敗しました。${err}`);
       });
   }, []);
-
+  function dateConvert(oldDate) {
+    // 2024-04-25T16:13:00ZのZの部分を切り出す
+    const newDate = oldDate.replace(/Z$/, "");
+    return newDate;
+  }
   return (
     <div>
       <Header />
@@ -107,6 +112,7 @@ export const EditTask = () => {
             type="datetime-local"
             onChange={handleLimitChange}
             className="new-task-limit"
+            value={dateConvert(limit)}
           />
           <br />
           <div>
