@@ -152,6 +152,7 @@ const Tasks = (props) => {
                 {task.title}
                 <br />
                 {task.done ? "完了" : "未完了"}
+                <p>期限:{dateCnversion(task.limit)}</p>
               </Link>
             </li>
           ))}
