@@ -5,6 +5,7 @@ import axios from "axios";
 import { Header } from "../components/Header";
 import { url } from "../const";
 import "./home.scss";
+import { UntilLimit } from "../components/UntilLimit";
 
 import PropTypes from "prop-types";
 
@@ -164,7 +165,10 @@ const Tasks = (props) => {
                 {task.title}
                 <br />
                 {task.done ? "完了" : "未完了"}
-                <p>期限:{dateConversion(task.limit)}</p>
+                <p>
+                  期限:{dateConversion(task.limit)}
+                  <UntilLimit limit={task.limit} />
+                </p>
               </Link>
             </li>
           ))}
@@ -187,7 +191,10 @@ const Tasks = (props) => {
               {task.title}
               <br />
               {task.done ? "完了" : "未完了"}
-              <p>期限:{dateConversion(task.limit)}</p>
+              <p>
+                期限:{dateConversion(task.limit)}
+                <UntilLimit limit={task.limit} />
+              </p>
             </Link>
           </li>
         ))}
