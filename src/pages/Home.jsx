@@ -129,11 +129,23 @@ const Tasks = (props) => {
   const { tasks, selectListId, isDoneDisplay } = props;
   if (tasks === null) return <></>;
   // 時間表示変換
-  function dateCnversion(beforeDate) {
+  function dateConversion(beforeDate) {
     // before_date||YYYY-MM-DDTHH:MM:SSZ形式
     const oldDate = new Date(beforeDate);
     oldDate.setHours(oldDate.getHours() - 9);
-    const newDate = oldDate.toLocaleString();
+    // YYYY-MM-DDTHH:MM:SSZ形式を表示したいフォーマットにする
+    const newDate =
+      oldDate.getFullYear() +
+      "年" +
+      (oldDate.getMonth() + 1) +
+      "月" +
+      oldDate.getDate() +
+      "日" +
+      oldDate.getHours() +
+      "時" +
+      oldDate.getMinutes() +
+      "分";
+    console.log(newDate);
     return newDate;
   }
   if (isDoneDisplay === "done") {
@@ -152,7 +164,7 @@ const Tasks = (props) => {
                 {task.title}
                 <br />
                 {task.done ? "完了" : "未完了"}
-                <p>期限:{dateCnversion(task.limit)}</p>
+                <p>期限:{dateConversion(task.limit)}</p>
               </Link>
             </li>
           ))}
@@ -175,7 +187,7 @@ const Tasks = (props) => {
               {task.title}
               <br />
               {task.done ? "完了" : "未完了"}
-              <p>期限:{dateCnversion(task.limit)}</p>
+              <p>期限:{dateConversion(task.limit)}</p>
             </Link>
           </li>
         ))}
