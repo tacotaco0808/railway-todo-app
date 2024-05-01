@@ -5,10 +5,6 @@
   margin: 0 auto;
 }
 
-.signin-form {
-  margin: 25px 0;
-}
-
 .email-label,
 .password-label {
   color: #555555;
@@ -32,4 +28,17 @@
 
 .error-message {
   color: #ff3333;
+  width: 90%;
+}
+
+@media screen and (max-width: 768px) {
+  .signin {
+    width: 100%;
+  }
+  input {
+    max-width: 90%;
+  }
+  .signin-form {
+    max-width: 390px;
+  }
 }

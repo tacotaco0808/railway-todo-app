@@ -33,4 +33,10 @@
 
 .error-message {
   color: #ff3333;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .edit-list {
+    width: 100%;
+  }
 }
