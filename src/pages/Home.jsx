@@ -208,7 +208,7 @@ const Tasks = (props) => {
 };
 /* ESLintに沿った型定義のようなもの */
 Tasks.propTypes = {
-  tasks: PropTypes.array.isRequired,
+  tasks: PropTypes.array,
   selectListId: PropTypes.string.isRequired,
   isDoneDisplay: PropTypes.string.isRequired,
 };
