@@ -88,11 +88,16 @@ export const Home = () => {
           <ul className="list-tab">
             {lists.map((list, key) => {
               const isActive = list.id === selectListId;
+              const tabIndex = key + 1;
               return (
                 <li
                   key={key}
                   className={`list-tab-item ${isActive ? "active" : ""}`}
                   onClick={() => handleSelectList(list.id)}
+                  onFocus={() =>
+                    handleSelectList(list.id)
+                  } /* tabでリストにフォーカスしている時実行 */
+                  tabIndex={`${tabIndex}`}
                 >
                   {list.title}
                 </li>
